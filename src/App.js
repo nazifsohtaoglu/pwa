@@ -58,7 +58,7 @@ import './App.scss';
 
 const App = () => {
 
-    const [layoutMode, setLayoutMode] = useState('static');
+    const [layoutMode, setLayoutMode] = useState('overlay');
     const [layoutColorMode, setLayoutColorMode] = useState('dark')
     const [inputStyle, setInputStyle] = useState('outlined');
     const [ripple, setRipple] = useState(false);
@@ -120,8 +120,8 @@ const App = () => {
     }
 
     const menu = [
-        { label: 'Perosnel', icon: 'pi pi-fw pi-home', to: '/' },
-        { label: 'Bayi', icon: 'pi pi-fw pi-home', to: 'bayi' },
+        { label: 'Personel', icon: 'pi pi-fw pi-id-card', to: '/' },
+        { label: 'Bayi', icon: 'pi pi-fw pi-map-marker', to: 'bayi' },
         // {
         //     label: 'UI Kit', icon: 'pi pi-fw pi-sitemap',
         //     items: [
@@ -259,9 +259,9 @@ const App = () => {
                     <AppMenu model={menu} onMenuItemClick={onMenuItemClick} />
                 </div>
             </CSSTransition>
-
+{/* 
             <AppConfig rippleEffect={ripple} onRippleEffect={onRipple} inputStyle={inputStyle} onInputStyleChange={onInputStyleChange}
-                layoutMode={layoutMode} onLayoutModeChange={onLayoutModeChange} layoutColorMode={layoutColorMode} onColorModeChange={onColorModeChange} />
+                layoutMode={layoutMode} onLayoutModeChange={onLayoutModeChange} layoutColorMode={layoutColorMode} onColorModeChange={onColorModeChange} /> */}
 
             <div className="layout-main">
                 <Route path="/" exact component={Dashboard} />

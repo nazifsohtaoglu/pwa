@@ -35,18 +35,68 @@ export const Dashboard = () => {
     
     const [productDialog, setProductDialog] = useState(false);
     const [qr, setQr] = useState('');
+    const [il, setIl] = useState(null);
+    const [ilce, setIlce] = useState(null);
+    const [bayi, setBayi] = useState(null);
+    const [text, setText] = useState('');
+    const [barkodGoster, setBarkodGoster] = useState(false);
+    const iller = [
+        { name: 'Ankara', code: 'Ankara' },
+        
+    ];
    
+    const ilceler = [
+       
+      { name: 'Altındağ', code: 'Altındağ' },
+      { name: 'Ayaş', code: 'Ayaş' },
+      { name: 'Bala', code: 'Bala' },
+      { name: 'Beypazarı', code: 'Beypazarı' },
+      { name: 'Çamlıdere', code: 'Çamlıdere' },
+      { name: 'Çankaya', code: 'Çankaya' },
+      { name: 'Çubuk', code: 'Çubuk' },
+      { name: 'Elmadağ', code: 'Elmadağ' },
+      { name: 'Güdül', code: 'Güdül' },
+      { name: 'Haymana', code: 'Haymana' },
+      { name: 'Kalecik', code: 'Kalecik' },
+      { name: 'Kızılcahamam', code: 'Kızılcahamam' },
+      { name: 'Nallıhan', code: 'Nallıhan' },
+      { name: 'Polatlı', code: 'Polatlı' },
+      { name: 'Yenimahalle', code: 'Yenimahalle' },
+    
+      
+    ];
+    const bayiler = [
+        { name: 'A', code: 'A' },
+        { name: 'B', code: 'B' },
+        { name: 'C', code: 'C' },
+        { name: 'D', code: 'D' },
+        { name: 'E', code: 'E' },
+        { name: 'F', code: 'F' },
+
+        
+    ];
 
     const hideDialog = () => {
-      
+        setBarkodGoster(false)
+        setText("")
         setProductDialog(false);
     }
 
     const openDialog = (text) => {
         
-        QRCode.toDataURL(text).then((data)=>{setQr(data)})
+        setText(text)
         setProductDialog(true)
     }
+
+    const kodUret = () => {
+        setBarkodGoster(true)
+        let _text;
+        _text= text +" "+ il.name +" "+ ilce.name +" "+ bayi.name
+
+        QRCode.toDataURL(_text).then((data)=>{setQr(data)})
+        
+    }
+
     return (
         <div className="p-grid p-fluid dashboard">
             
@@ -63,11 +113,26 @@ export const Dashboard = () => {
             })}
             
 
-              <Dialog visible={productDialog} style={{ width: '450px' }} header="Product Details" modal className="p-fluid"  onHide={hideDialog}>
-                        
+              <Dialog visible={productDialog} style={{ width: '450px' }} header="QR Kod Oluştur" modal className="p-fluid"  onHide={hideDialog}>
+              <div className="p-grid p-dir-col">
+                <div className="p-col p-mb-1 p-mt-1">
+                    <Dropdown id="state" value={il} onChange={(e) => setIl(e.value)} options={iller} optionLabel="name" placeholder="Seçniz"></Dropdown>      
+                </div>
+                <div className="p-col p-mb-1">
+                    <Dropdown id="state" value={ilce} onChange={(e) => setIlce(e.value)} options={ilceler} optionLabel="name" placeholder="Seçniz"></Dropdown>      
+              </div>
+              <div className="p-col p-mb-1">
+                    <Dropdown id="state" value={bayi} onChange={(e) => setBayi(e.value)} options={bayiler} optionLabel="name" placeholder="Seçniz"></Dropdown>      
+              </div>
+              <div className="p-col p-mb-1">
+                <Button label="QR Kod Üret" onClick={()=>kodUret() } className="p-button-secondary p-mr-2 p-mb-2" />
+              </div>
                 <div>
-                    <img src={qr}style={{ width: '100%' }}></img>
-                </div>       
+                   
+                    {barkodGoster?<img src={qr}style={{ width: '100%' }}></img>:<img style={{ width: '100%' }}></img>}
+                </div>    
+
+               </div>      
              </Dialog>
 
                           

@@ -43,6 +43,17 @@
       "src": "icons/512x512.jpeg",
       "sizes": "611x512",
       "type": "image/jpeg"
+    },
+    {
+      "src": "icons/940x788.png",
+      "sizes": "940x788",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/maskeble.png",
+      "sizes": "546x546",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "start_url": "./index.html",

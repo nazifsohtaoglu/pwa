@@ -53,10 +53,14 @@ export const Bayi = () => {
             setScanResultWebCam(result);
         }
        }
+    const onayla = ()=>{
+        toast.current.show({ severity: 'success', summary: 'Onaya gönderildi', detail: 'Onay için talep eden personele gönderildi.', life: 3000 });
+    }
 
     return (
-        <div className="p-grid crud-demo">
-            <div className="p-col-12">
+        <div className="p-grid ">
+            <Toast ref={toast} />
+            <div className="p-col-12 p-d-flex p-jc-center">
                 {/* <div className="card">
               
                         
@@ -73,16 +77,21 @@ export const Bayi = () => {
                     
                      
                 </div> */}
-                <div className="card">
+                <div className="card " style={{width: '600px'}}>
                
-                         <h3>Qr Code Scan by Web Cam</h3>
+                         <h3>Qr Kod Tarama</h3>
                          <QrReader
                          delay={300}
-                        //  style={{width: '100%'}}
+                          
                          onError={handleErrorWebCam}
                          onScan={handleScanWebCam}
                          />
-                         <h3>Scanned By WebCam Code: {scanResultWebCam}</h3>
+                         <h3>Taranan Kod : </h3>
+                         <br/>
+                         <div className="p-mb-3 p-text-bold">{scanResultWebCam}</div>
+                         {scanResultWebCam===''?<></>:<div className="p-col p-mb-1 p-d-flex p-jc-center">
+                            <Button  onClick={()=>onayla()} label="Onayla"  className="p-button     p-mr-2 p-mb-2" />
+                        </div>}
                       
                     
                 </div>    
