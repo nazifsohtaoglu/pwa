@@ -1,11 +1,48 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Akaryakıt Barkod",
+  "name": "Akaryakıt Barkod",
   "icons": [
+    
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "icons/72x72.jpeg",
+      "sizes": "86x72",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "icons/128x128.jpeg",
+      "sizes": "153x128",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "icons/144x144.jpeg",
+      "sizes": "172x144",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "icons/152x152.jpeg",
+      "sizes": "181x152",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "icons/192x192.jpeg",
+      "sizes": "229x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/256x256.jpeg",
+      "sizes": "256x256",
+      "type": "image/jpeg"
+    },
+    
+    {
+      "src": "icons/384x384.jpeg",
+      "sizes": "458x384",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "icons/512x512.jpeg",
+      "sizes": "611x512",
+      "type": "image/jpeg"
     }
   ],
   "start_url": "./index.html",

@@ -14,11 +14,13 @@ export const AppProfile = () => {
     return (
         <div className="layout-profile">
             <div>
-                <img src="assets/layout/images/profile.png" alt="Profile" />
+                <img src="assets/layout/images/avatar_4.png" alt="Profile" />
             </div>
-            <button className="p-link layout-profile-link" onClick={onClick}>
-                <span className="username">Claire Williams</span>
-                <i className="pi pi-fw pi-cog" />
+            <button className="p-link layout-profile-link " onClick={onClick}>
+                <span className="p-d-flex p-jc-center">Nazif SOHTAOĞLU</span> 
+                <span className="p-d-flex p-jc-center">J.İkm.Yzb.</span>
+               
+                {/* <i className="pi pi-fw pi-cog" /> */}
             </button>
             <CSSTransition classNames="p-toggleable-content" timeout={{ enter: 1000, exit: 450 }} in={expanded} unmountOnExit>
                 <ul className={classNames({ 'layout-profile-expanded': expanded })}>
